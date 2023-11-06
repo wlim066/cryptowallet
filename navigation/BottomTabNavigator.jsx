@@ -1,9 +1,11 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
-// import WatchlistScreen from "../screens/WatchlistScreen/WatchlistScreen";
-// import PortfolioScreen from "../screens/PortfolioScreen/PortfolioScreen";
 import {Entypo, FontAwesome, Foundation} from '@expo/vector-icons';
+
+import HomeScreen from '../screens/HomeScreen/HomeScreen';
+import FavouritesScreen from '../screens/FavouritesScreen/FavouritesScreen';
+import PortfolioScreen from '../screens/PortfolioScreen/PortfolioScreen';
+import UserProfileScreen from '../screens/UserProfileScreen/UserProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,24 +30,37 @@ const BottomTabNavigator = () => {
           ),
         }}
       />
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Portfolio"
         component={PortfolioScreen}
         options={{
-          tabBarIcon: ({ focused, color }) => (
-            <Foundation name="graph-pie" size={focused ? 35 : 30} color={color} />
+          tabBarIcon: ({focused, color}) => (
+            <Foundation
+              name="graph-pie"
+              size={focused ? 35 : 30}
+              color={color}
+            />
           ),
         }}
       />
       <Tab.Screen
-        name="Watchlist"
-        component={WatchlistScreen}
+        name="Favourites"
+        component={FavouritesScreen}
         options={{
-          tabBarIcon: ({ focused, color }) => (
+          tabBarIcon: ({focused, color}) => (
             <FontAwesome name="star" size={focused ? 30 : 25} color={color} />
           ),
         }}
-      /> */}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={UserProfileScreen}
+        options={{
+          tabBarIcon: ({focused, color}) => (
+            <FontAwesome name="user" size={focused ? 30 : 25} color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };

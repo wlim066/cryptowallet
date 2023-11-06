@@ -3,6 +3,7 @@ import {View, FlatList, RefreshControl, ActivityIndicator} from 'react-native';
 
 import CoinListItem from '../../components/CoinListItem/CoinListItem';
 import {getMarketData} from '../../services/requests';
+import {auth} from '../../config/firebase';
 
 const HomeScreen = () => {
   const [coins, setCoins] = useState([]);

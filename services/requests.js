@@ -14,7 +14,7 @@ export const getCoinData = async coinId => {
 export const getCoinMarketChart = async (coinId, selectedRange) => {
   try {
     const response = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=${selectedRange}`,
+      `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=sgd&days=${selectedRange}`,
     );
     return response.data;
   } catch (e) {
@@ -25,7 +25,7 @@ export const getCoinMarketChart = async (coinId, selectedRange) => {
 export const getMarketData = async (pageNumber = 1) => {
   try {
     const response = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=${pageNumber}&sparkline=false&price_change_percentage=24h`,
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=sgd&order=market_cap_desc&per_page=50&page=${pageNumber}&sparkline=false&price_change_percentage=24h`,
     );
     return response.data;
   } catch (e) {
@@ -33,10 +33,10 @@ export const getMarketData = async (pageNumber = 1) => {
   }
 };
 
-export const getWatchlistedCoins = async (pageNumber = 1, coinIds) => {
+export const getFavouritesCoins = async (pageNumber = 1, coinIds) => {
   try {
     const response = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinIds}&order=market_cap_desc&per_page=50&page=${pageNumber}&sparkline=false&price_change_percentage=24h`,
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=sgd&ids=${coinIds}&order=market_cap_desc&per_page=50&page=${pageNumber}&sparkline=false&price_change_percentage=24h`,
     );
     return response.data;
   } catch (e) {
@@ -58,7 +58,7 @@ export const getAllCoins = async () => {
 export const getCandleChartData = async (coinId, days = 1) => {
   try {
     const response = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/${coinId}/ohlc?vs_currency=usd&days=${days}`,
+      `https://api.coingecko.com/api/v3/coins/${coinId}/ohlc?vs_currency=sgd&days=${days}`,
     );
     return response.data;
   } catch (e) {
